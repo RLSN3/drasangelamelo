@@ -419,6 +419,27 @@ h1 .grad{background:linear-gradient(100deg,#17709F 0%,#1E86BE 100%);-webkit-back
   .book{border:2px solid var(--gold)}
   .book::before{display:none}
 }
+/* Compatibilidade visual para navegadores Windows sem alguns recursos opcionais */
+@supports not (aspect-ratio: 4 / 5){
+  .photo{height:480px}
+  .photo.cutout{height:auto;min-height:320px}
+  .gallery button{height:280px}
+  .gallery.g1 button:first-child{height:560px}
+  @media(max-width:820px){
+    .photo{height:380px}
+    .gallery button,.gallery.g1 button:first-child{height:240px}
+  }
+}
+@supports not (backdrop-filter:blur(1px)){
+  .nav{background:#fff}
+}
+@supports not (scroll-behavior:smooth){
+  html{scroll-behavior:auto}
+}
+/* Efeitos são decorativos: conteúdo e controles mantêm sua função sem animação */
+@media(prefers-reduced-motion:reduce){
+  .path,.pillar,.emp-card,.team article,.steps li,.hx-fluted i{animation:none!important;transform:none!important}
+}
 /* Sem IntersectionObserver, os elementos permanecem visíveis */
 @media(prefers-reduced-motion:reduce){
   .rv{opacity:1!important;transform:none!important}
