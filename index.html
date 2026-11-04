@@ -404,6 +404,26 @@ h1 .grad{background:linear-gradient(100deg,#17709F 0%,#1E86BE 100%);-webkit-back
 @media(min-width:961px) and (max-width:1120px){.nav nav a:not(.btn){margin-left:10px;font-size:.95rem}.brand img{height:36px}.nav-cta{margin-left:10px}}
 @media(prefers-reduced-motion:reduce){.fc,.hx-ring,.rtrack{animation:none!important}.fc3 b{transition:none}}
 
+
+/* Compatibilidade: navegadores sem suporte à propriedade CSS translate */
+@supports not (translate: 1px 1px){
+  .path:hover,.pillar:hover,.emp-card:hover,.team article:hover,
+  .path.on,.pillar.on,.emp-card.on,.team article.on,
+  .path:focus-within,.pillar:focus-within,.emp-card:focus-within,.team article:focus-within{transform:translateY(-6px)}
+  .steps li:hover,.steps li.on{transform:translateY(-5px)}
+  .hx-fluted i{animation-name:hxflow-transform}
+  @keyframes hxflow-transform{from{transform:translateX(-2%)}to{transform:translateX(2%)}}
+  @keyframes fcin{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+}
+@supports not (mask-composite:exclude){
+  .book{border:2px solid var(--gold)}
+  .book::before{display:none}
+}
+/* Sem IntersectionObserver, os elementos permanecem visíveis */
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1!important;transform:none!important}
+}
+
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["MedicalClinic","Physiotherapy"],"@id":"https://www.drasangelamelo.com.br/#clinica","name":"Clínica Dra. Sângela Melo","description":"Clínica de fisioterapia, Pilates e Medicina do Trabalho no centro de Ipu-CE, com mais de 12 anos de atuação.","image":"https://www.drasangelamelo.com.br/assets/images/og.jpg","areaServed":{"@type":"City","name":"Ipu"},"url":"https://www.drasangelamelo.com.br/","logo":"https://www.drasangelamelo.com.br/assets/images/logo.svg","telephone":"+55-88-99685-1585","address":{"@type":"PostalAddress","streetAddress":"R. Cel. Félix, 897 - Centro","addressLocality":"Ipu","addressRegion":"CE","postalCode":"62250-000","addressCountry":"BR"},"sameAs":["https://wellhub.com/pt-br/search/partners/sangela-melo-fisioterapia-e-pilates-centro/","https://www.instagram.com/drasangelamelofisio/","https://www.facebook.com/drasangelamelofisio"],"hasMap":"https://maps.app.goo.gl/fS2zPvUy1dNfhracA","medicalSpecialty":"PhysicalTherapy","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"14:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"07:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"12:00"}],"employee":[{"@type":"Person","name":"Sângela Melo","jobTitle":"Fisioterapeuta e profissional de Pilates","hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"license","name":"CREFITO-6 335684"}},{"@type":"Person","name":"Antonio Carlos Martins","alternateName":"Dr. Cacá","jobTitle":"Médico do trabalho","hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"license","name":"CRM 2375, RQE 5857"}}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Atendimentos da clínica","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fisioterapia","description":"Traumato-ortopedia, fisioterapia neurológica, gerontológica e pediátrica, fisioterapia respiratória e atendimento domiciliar."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pilates","description":"Pilates em aparelhos e no solo, com avaliação antes de começar e acompanhamento individual."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Medicina do Trabalho","description":"Consulta com o Dr. Cacá, na sala de consulta da clínica, para empresas e trabalhadores."}}]},"knowsLanguage":"pt-BR"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Como agendar uma avaliação?", "acceptedAnswer": {"@type": "Answer", "text": "Pelo WhatsApp (88) 99685-1585. Use o formulário do topo ou o botão do atendimento que você procura."}}, {"@type": "Question", "name": "Quanto custa o atendimento?", "acceptedAnswer": {"@type": "Answer", "text": "Os valores variam conforme o atendimento e o plano escolhido. Peça as informações pelo WhatsApp (88) 99685-1585."}}, {"@type": "Question", "name": "Como é a primeira avaliação?", "acceptedAnswer": {"@type": "Answer", "text": "Você conversa com a fisioterapeuta e faz um exame para entender o seu caso. Depois recebe o plano de tratamento definido para as suas necessidades."}}, {"@type": "Question", "name": "A clínica aceita Wellhub?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. A clínica é parceira do Wellhub para Fisioterapia e Pilates. A cobertura depende do seu plano, então confirme pelo WhatsApp antes de agendar."}}, {"@type": "Question", "name": "Como funciona a Medicina do Trabalho?", "acceptedAnswer": {"@type": "Answer", "text": "O atendimento é feito pelo Dr. Antonio Carlos Martins (Dr. Cacá), médico do trabalho, na sala de consulta da clínica. Para detalhes e agendamento, fale pelo WhatsApp."}}, {"@type": "Question", "name": "A clínica faz atendimento domiciliar?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Para saber como solicitar, fale pelo WhatsApp."}}]}</script>
